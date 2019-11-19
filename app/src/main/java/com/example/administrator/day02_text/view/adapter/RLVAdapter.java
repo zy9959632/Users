@@ -53,7 +53,7 @@ public class RLVAdapter extends RecyclerView.Adapter<RLVAdapter.MyHolder> {
             @Override
             public boolean onLongClick(View v) {
                 onClick.onLongClick(position);
-                return false;
+                return true;
             }
         });
     }
