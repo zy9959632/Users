@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao'
+
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.administrator.day02_text"
+        applicationId "com.example.administrator.day03_zuoye"
         minSdkVersion 22
         targetSdkVersion 27
         versionCode 1
@@ -16,24 +16,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    greendao {
-        //数据库版本号，升级时修改
-        schemaVersion 1
-        //生成的DAO，DaoMaster和DaoSession的包路径。把com.example.xts.greendaodemo修改为与表实体所在的包路径相同（自己的项目主包路径）
-        daoPackage 'com.example.xts.greendaodemo.db'
-        //生成源文件的路径。默认源文件目录是在build目录中的(build/generated/source/greendao)
-        targetGenDir 'src/main/java'
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-v4:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'//butterknife
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'//retrofit2+gson
@@ -51,5 +42,4 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.3'//okhttp
     implementation 'com.android.support:cardview-v7:27.1.1'//cardview
     implementation "io.reactivex.rxjava2:rxjava:2.2.12"//rxjava2
-    implementation 'org.greenrobot:greendao:3.2.2' // add library//数据库
 }
